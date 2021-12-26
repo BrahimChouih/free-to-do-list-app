@@ -3,7 +3,7 @@ import 'package:brahimdb/models/tasks.dart';
 import 'package:brahimdb/screens/add_screen.dart';
 import 'package:brahimdb/utils/about_task.dart';
 import 'package:brahimdb/utils/app_bar.dart';
-import 'package:brahimdb/utils/constants_timer_screen.dart';
+import 'package:brahimdb/utils/constants.dart';
 import 'package:brahimdb/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:brahimdb/database/bl/data_methods.dart';
@@ -118,7 +118,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
           },
           leading: IconButton(
-            icon: Icon(Icons.close),
+            icon: Icon(
+              Icons.close,
+              color: Colors.white,
+            ),
             onPressed: () {
               setState(() {
                 DataBaseMethod.deleteData("id = ${tasks[index].id}");
@@ -141,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     newTask.completed = value ? 1 : 0;
                     DataBaseMethod.updateValues(newTask.id, newTask);
                   });
-                  if(value){
+                  if (value) {
                     final player = AudioCache();
                     player.play('audio/checked.wav');
                   }

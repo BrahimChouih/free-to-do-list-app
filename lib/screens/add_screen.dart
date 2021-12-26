@@ -1,8 +1,8 @@
 import 'package:brahimdb/database/bl/data_methods.dart';
 import 'package:brahimdb/models/tasks.dart';
-import 'package:brahimdb/utils/constants_timer_screen.dart';
+import 'package:brahimdb/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'project_tasks.dart';
+import 'home_screen.dart';
 import 'package:flutter/cupertino.dart';
 
 addScreen(_, Function state) {
@@ -87,8 +87,13 @@ Widget inputTask(TextEditingController controller, String txt) {
       decoration: InputDecoration(
         hintText: txt,
         hintStyle: TextStyle(color: Colors.white30),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: BorderSide(color: primaryColor, width: 1.0),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
+          borderSide: BorderSide(color: primaryColor, width: 1.0),
         ),
       ),
     ),

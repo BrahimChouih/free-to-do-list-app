@@ -8,7 +8,7 @@ AlertDialog aboutBrahim(context) {
     ),
     title: Text("INFO"),
     content: Text(
-        "programmer : Brahim CHOUIH \nFb: cristal.brahim \nemail: brahim26chouih@gamil.com"),
+        "programmer : Brahim CHOUIH \nFb: brahim.chouih \nemail: brahim26chouih@gamil.com"),
     actions: <Widget>[
       FlatButton(
         child: Text('ok'),

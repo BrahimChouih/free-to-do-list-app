@@ -1,6 +1,7 @@
 import 'package:brahimdb/screens/timer_screen.dart';
+import 'package:brahimdb/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'screens/project_tasks.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        accentColor: Color(0xffBD4567),
-        cursorColor: Color(0xffBD4567),
+        primaryColor: primaryColor,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: primaryColor),
       ),
       initialRoute: HomeScreen.id,
       routes: {

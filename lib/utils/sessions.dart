@@ -1,4 +1,4 @@
-import 'package:brahimdb/screens/project_tasks.dart';
+import 'package:brahimdb/screens/home_screen.dart';
 import 'package:brahimdb/screens/timer_screen.dart';
 import 'package:brahimdb/timer.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +41,9 @@ class _SessionsSelectState extends State<SessionsSelect> {
           setState(() {
             icon == Icons.add
                 ? numSession++
-                : numSession > 1 ? numSession-- : {};
+                : numSession > 1
+                    ? numSession--
+                    : {};
           });
           numBreak = numSession - 1;
         } else {

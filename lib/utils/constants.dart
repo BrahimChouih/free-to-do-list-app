@@ -8,3 +8,4 @@ const kBackgroundImage = BoxDecoration(
   ),
 );
 ImageFilter kBlurFilter = ImageFilter.blur(sigmaY: 5, sigmaX: 5);
+Color primaryColor = Color(0xffBD4567);
