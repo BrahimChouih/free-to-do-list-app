@@ -1,6 +1,7 @@
-import 'package:brahimdb/screens/timer_screen.dart';
+import 'package:brahimdb/screens/pomodoro_screen.dart';
 import 'package:brahimdb/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -10,7 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.id,
       routes: {
         HomeScreen.id: (_) => HomeScreen(),
-        TimerScreen.id: (_) => TimerScreen(),
+        PomodoroScreen.id: (_) => PomodoroScreen(),
       },
     );
   }

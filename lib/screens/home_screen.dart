@@ -1,4 +1,5 @@
 import 'package:audioplayers/audio_cache.dart';
+import 'package:brahimdb/controllers/timer_controller.dart';
 import 'package:brahimdb/models/tasks.dart';
 import 'package:brahimdb/screens/add_screen.dart';
 import 'package:brahimdb/utils/about_task.dart';
@@ -7,6 +8,7 @@ import 'package:brahimdb/utils/constants.dart';
 import 'package:brahimdb/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:brahimdb/database/bl/data_methods.dart';
+import 'package:get/get.dart';
 
 double height;
 double width;
@@ -19,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Task> tasks = [];
+  TimerConrtoller timerConrtoller = Get.put(TimerConrtoller());
 
   Future getTasks() async {
     DataBaseMethod.getMyData().then((onValue) {

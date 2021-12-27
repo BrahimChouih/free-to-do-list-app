@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:brahimdb/screens/timer_screen.dart';
+import 'package:brahimdb/screens/pomodoro_screen.dart';
 import 'package:brahimdb/utils/exit.dart';
 import 'package:flutter/material.dart';
 import 'package:brahimdb/screens/home_screen.dart';
@@ -37,7 +37,12 @@ class MyDrawer extends StatelessWidget {
                 }),
                 SizedBox(height: height * 0.05),
                 drawerContent('Timer', Icons.timer, () {
-                  Navigator.of(context).pushReplacementNamed(TimerScreen.id);
+                  // Navigator.of(context).pushReplacementNamed(TimerScreen.id);
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (_) => PomodoroScreen(),
+                    ),
+                  );
                 }),
                 SizedBox(height: height * 0.05),
                 drawerContent('About', Icons.info, () {
