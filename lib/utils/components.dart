@@ -1,5 +1,4 @@
 import 'package:brahimdb/screens/home_screen.dart';
-import '../timer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //////////////////////////////////// TIMER SCREEN //////////////////////////

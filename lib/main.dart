@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'ToDoList',
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
         colorScheme: ColorScheme.fromSwatch().copyWith(secondary: primaryColor),
