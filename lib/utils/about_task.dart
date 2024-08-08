@@ -8,7 +8,7 @@ AlertDialog aboutTask(context, {String title, String description, int done}) {
       borderRadius: BorderRadius.circular(20),
     ),
     title: Text("About $title"),
-    content: Text("Description : $description \n\n Completed : $completed"),
+    content: Text("Description : $description \n\nCompleted : $completed"),
     actions: <Widget>[
       FlatButton(
         child: Text('ok'),

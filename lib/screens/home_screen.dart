@@ -95,16 +95,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   : null,
             ),
           ),
-          subtitle: Text(
-            tasks[index].description.length < 20
-                ? tasks[index].description
-                : tasks[index].description.substring(0, 20) + "...",
-            style: TextStyle(
-              decoration: tasks[index].completed != 0
-                  ? TextDecoration.lineThrough
-                  : null,
-            ),
-          ),
+          subtitle: tasks[index].description != null
+              ? Text(
+                  tasks[index].description.length < 20
+                      ? tasks[index].description
+                      : tasks[index].description.substring(0, 20) + "...",
+                  style: TextStyle(
+                    decoration: tasks[index].completed != 0
+                        ? TextDecoration.lineThrough
+                        : null,
+                  ),
+                )
+              : null,
           onTap: () {
             showDialog(
                 context: context,
@@ -134,10 +136,20 @@ class _HomeScreenState extends State<HomeScreen> {
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              CircleAvatar(
-                backgroundColor: priorityColor(tasks[index].priority)[0],
-                child: Text(priorityColor(tasks[index].priority)[1]),
-                radius: height * 0.025,
+              Container(
+                decoration: BoxDecoration(
+                  color: priorityColor(tasks[index].priority)[0],
+                  shape: BoxShape.circle,
+                ),
+                padding: EdgeInsets.all(width * 0.03),
+                alignment: Alignment.center,
+                child: Text(
+                  priorityColor(tasks[index].priority)[1],
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: priorityColor(tasks[index].priority)[2],
+                  ),
+                ),
               ),
               Checkbox(
                 value: tasks[index].completed == 0 ? false : true,
@@ -164,11 +176,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List priorityColor(int priority) {
     if (priority == 1) {
-      return [Color(0xffBD4567), 'A'];
+      return [Color(0xffBD4567), 'A', Colors.white];
     } else if (priority == 2) {
-      return [Colors.orange, 'B'];
+      return [Colors.orange, 'B', Colors.white];
     } else {
-      return [Colors.yellow, 'C'];
+      return [Colors.yellow, 'C', Colors.black];
     }
   }
 }

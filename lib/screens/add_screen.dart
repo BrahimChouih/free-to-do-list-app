@@ -59,13 +59,18 @@ addScreen(_, Function state) {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   onPressed: () {
-                    if (taskName.text != "" && description.text != "") {
+                    if (taskName.text != "") {
                       DataBaseMethod.addData(
-                        new Task(taskName.text, priority, 0, description.text),
+                        new Task(
+                          taskName.text,
+                          priority,
+                          0,
+                          description.text ?? '',
+                        ),
                       );
+                      state();
+                      Navigator.pop(context);
                     }
-                    state();
-                    Navigator.pop(context);
                   },
                 ),
               ],
