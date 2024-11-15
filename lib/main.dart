@@ -2,8 +2,8 @@ import 'package:brahimdb/screens/pomodoro_screen.dart';
 import 'package:brahimdb/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'screens/home_screen.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
